@@ -1,0 +1,28 @@
+// A1_PatternMatching.java
+// Requiere Java 17+ (para switch con pattern) o Java 16+ (instanceof)
+
+public class Ejercicio_1{
+    public static void main(String[] args) {
+        Object[] datos = { "Hola", 42, 3.1416, true };
+
+        for (Object o : datos) {
+            System.out.println(describir(o));
+        }
+    }
+
+    // Método static (no POO) que usa instanceof para tipos del JDK
+    static String describir(Object o) {
+        if (o instanceof String) {
+            String s = (String) o;
+            return "Es un String de longitud " + s.length();
+        } else if (o instanceof Integer) {
+            return "Es un Integer con valor " + o;
+        } else if (o instanceof Double) {
+            return "Es un Double con valor " + o;
+        } else if (o instanceof Boolean) {
+            return "Es un Boolean: " + o;
+        } else {
+            return "Tipo desconocido: " + o.getClass().getSimpleName();
+        }
+    }
+}
